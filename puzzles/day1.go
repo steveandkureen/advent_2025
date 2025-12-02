@@ -1,4 +1,4 @@
-package puzzels
+package puzzles
 
 import (
 	"fmt"

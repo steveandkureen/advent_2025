@@ -1,0 +1,3 @@
+package puzzles
+
+func DatTwo() {}

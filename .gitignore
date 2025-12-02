@@ -24,6 +24,9 @@ profile.cov
 go.work
 go.work.sum
 
+advent_2025
+output.txt
+
 # env file
 .env
 

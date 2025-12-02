@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	puzzels "steveandkureen/advent_2025/puzzels"
+	puzzels "steveandkureen/advent_2025/puzzles"
 )
 
 func main() {
