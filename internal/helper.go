@@ -1,3 +1,4 @@
+// Package internal contains helper functions need by the puzzles
 package internal
 
 import (

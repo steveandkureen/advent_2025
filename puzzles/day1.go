@@ -13,9 +13,6 @@ func FindCombonation(filename string, isHard bool) (string, error) {
 		fmt.Printf("error reading file: %s\n", err)
 	}
 	fmt.Printf("Input: %s\n", string(data))
-	if err != nil {
-		return "", err
-	}
 	currentPos := 50
 	steps := strings.Split(data, "\n")
 	result := 0

@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	puzzels "steveandkureen/advent_2025/puzzles"
+	"time"
 )
 
 func main() {
@@ -29,14 +30,19 @@ func main() {
 	fmt.Printf("Loading data: %s\n", file)
 	var result string
 	var err error
+	start := time.Now()
 	switch *day {
 	default:
 		fmt.Printf("Day not found: %d\n", *day)
 	case 1:
 		result, err = puzzels.FindCombonation(file, *isHard)
+	case 2:
+		result, err = puzzels.CheckProdcutIds(file, *isHard)
 	}
 	if err != nil {
 		fmt.Printf("Puzzel failed: %s\n", err)
 	}
 	fmt.Printf("result: %s\n", result)
+	elapsed := time.Since(start)
+	fmt.Printf("Execution time: %s\n", elapsed)
 }
