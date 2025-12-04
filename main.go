@@ -43,6 +43,8 @@ func main() {
 		result, err = puzzels.CheckProdcutIds(file, *isHard)
 	case 3:
 		result, err = puzzels.FindMaxVoltage(file, *isHard)
+	case 4:
+		result, err = puzzels.FindAdjecentRolls(file, *isHard)
 	}
 	internal.ShowOutput = true
 	if err != nil {

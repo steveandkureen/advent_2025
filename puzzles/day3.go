@@ -18,7 +18,8 @@ func FindMaxVoltage(filename string, isHard bool) (string, error) {
 	for _, bank := range banks {
 		voltage := 0
 		if !isHard {
-			voltage = findBankMax(bank)
+			voltage = findBankMaxHard(bank, 2)
+			// http.ResponseWriter, r *http.Requestvoltage = findBankMax(bank)
 		} else {
 			voltage = findBankMaxHard(bank, 12)
 		}

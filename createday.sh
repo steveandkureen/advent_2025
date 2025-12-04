@@ -16,8 +16,33 @@ mkdir -p puzzles
 mkdir -p "data/day${DAY}"
 
 # Create the Go file in puzzles directory
-touch "puzzles/day${DAY}.go"
-touch "puzzles/day${DAY}_test.go"
+
+cat >puzzles/day${DAY}.go <<'EOF'
+  package puzzles
+  import (
+ 	"steveandkureen/advent_2025/internal"
+)
+  func Startfunc(filename string, isHard bool) int {
+    data, err := internal.ReadFile(filename)
+    if err != nil {
+      internal.LogOutput("error reading file: %s\n", err)
+    }
+  return 0
+}
+EOF
+
+cat >puzzles/day${DAY}_test.go <<'EOF'
+  package puzzles
+  
+  import "testing"
+
+  func startfunc() int {
+    data, err := internal.ReadFile(filename)
+    if err != nil {
+      internal.LogOutput("error reading file: %s\n", err)
+    }
+}
+EOF
 
 # Create the text files in data/day{x} directory
 touch "data/day${DAY}/easy.txt"
