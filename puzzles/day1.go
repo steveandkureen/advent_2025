@@ -10,9 +10,9 @@ import (
 func FindCombonation(filename string, isHard bool) (string, error) {
 	data, err := internal.ReadFile(filename)
 	if err != nil {
-		fmt.Printf("error reading file: %s\n", err)
+		internal.LogOutput("error reading file: %s\n", err)
 	}
-	fmt.Printf("Input: %s\n", string(data))
+	internal.LogOutput("Input: %s\n", string(data))
 	currentPos := 50
 	steps := strings.Split(data, "\n")
 	result := 0
@@ -23,7 +23,7 @@ func FindCombonation(filename string, isHard bool) (string, error) {
 		direction := line[0]
 		num, err := strconv.Atoi(line[1:])
 		if err != nil {
-			fmt.Printf("Bad data found %s\n", line)
+			internal.LogOutput("Bad data found %s\n", line)
 		}
 
 		if isHard {
@@ -32,7 +32,7 @@ func FindCombonation(filename string, isHard bool) (string, error) {
 			result, currentPos = doEasyCombo(direction, num, currentPos, result)
 		}
 	}
-	fmt.Printf("Answer: %d\n", result)
+	internal.LogOutput("Answer: %d\n", result)
 	return fmt.Sprintf("%d", result), nil
 }
 

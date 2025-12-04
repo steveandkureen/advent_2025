@@ -17,6 +17,7 @@ mkdir -p "data/day${DAY}"
 
 # Create the Go file in puzzles directory
 touch "puzzles/day${DAY}.go"
+touch "puzzles/day${DAY}_test.go"
 
 # Create the text files in data/day{x} directory
 touch "data/day${DAY}/easy.txt"

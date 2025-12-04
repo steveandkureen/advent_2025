@@ -2,8 +2,11 @@
 package internal
 
 import (
+	"fmt"
 	"os"
 )
+
+var ShowOutput bool = true
 
 func ReadFile(filename string) (string, error) {
 	data, err := os.ReadFile(filename)
@@ -11,4 +14,11 @@ func ReadFile(filename string) (string, error) {
 		return "", err
 	}
 	return string(data), nil
+}
+
+func LogOutput(format string, args ...any) {
+	if !ShowOutput {
+		return
+	}
+	fmt.Printf(format, args...)
 }
